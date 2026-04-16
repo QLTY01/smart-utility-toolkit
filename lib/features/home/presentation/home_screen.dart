@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:smart_utillity_toolkit/features/currency_converter/presentation/currency_converter_screen.dart';
 import 'package:smart_utillity_toolkit/features/length_converter/presentation/length_converter_screen.dart';
+import 'package:smart_utillity_toolkit/features/task_manager/presentation/task_manager_screen.dart';
 import 'package:smart_utillity_toolkit/shared/widgets/tool_card.dart';
 import 'package:smart_utillity_toolkit/features/temperature_converter/presentation/temperature_converter_screen.dart';
 import 'package:smart_utillity_toolkit/features/weight_converter/presentation/weight_converter_screen.dart';
@@ -32,12 +33,12 @@ class HomeScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'All-in-one Converter Tools',
+                    'All-in-one Utility Tools',
                     style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
                   ),
                   SizedBox(height: 8),
                   Text(
-                    'Convert Length, temperature, weight and currency quickly in one simple app.',
+                    'Convert values and manage tasks, all in one simple-offline friendly app.',
                     style: TextStyle(fontSize: 14, color: Colors.black54),
                   ),
                 ],
@@ -50,7 +51,7 @@ class HomeScreen extends StatelessWidget {
             ),
             SizedBox(height: 6),
             Text(
-              'Choose a converter to get started',
+              'Choose a tool to get started',
               style: TextStyle(fontSize: 14, color: Colors.black54),
             ),
             const SizedBox(height: 20),
@@ -89,6 +90,13 @@ class HomeScreen extends StatelessWidget {
                     color: Colors.green,
                     onTap: () =>
                         _navigateTo(context, const CurrencyConverterScreen()),
+                  ),
+                  ToolCard(
+                    color: Colors.deepPurple,
+                    title: 'Task Manager',
+                    icon: Icons.check_circle_outline,
+                    onTap: () =>
+                        _navigateTo(context, const TaskManagerScreen()),
                   ),
                 ],
               ),
